@@ -21,8 +21,8 @@ server.post('/webhooks', function (req, res, next) {
     var validSignature = crypto.timingSafeEqual(Buffer.from(signature), Buffer.from(hashed));
 
     if (signature && validSignature) {
-        if (eventType === "client_created") {
-            console.log("received client_created event: ", req.body);
+        if (eventType === "document_uploaded") {
+            console.log("received document_uploaded event: ", req.body);
         }
         
         res.send(req.params);
